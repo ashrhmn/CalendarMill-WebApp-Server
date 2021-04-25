@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var router = express_1.Router();
+var customer_controller_1 = require("../controllers/customer.controller");
+router.get("/api/customers", customer_controller_1.getAll);
+router.get("/api/customers/:id", customer_controller_1.getData);
+router.post("/api/customers", customer_controller_1.createData);
+router.put("/api/customers/:id", customer_controller_1.updateData);
+router.delete("/api/customers/:id", customer_controller_1.deleteData);
+router.get("/api/customers/search/:que", customer_controller_1.searchCustomer);
+router.get("/api/customers/due/:que", customer_controller_1.getDue);
+// router.get("/customers/search/", searchCustomer);
+exports.default = router;
